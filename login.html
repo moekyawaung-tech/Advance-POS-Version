@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POS Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="login-body">
+  <div class="login-box">
+    <h1>POS Login</h1>
+    <p>Demo account: admin / 1234</p>
+    <form id="loginForm">
+      <input type="text" id="username" placeholder="Username" required />
+      <input type="password" id="password" placeholder="Password" required />
+      <button class="btn primary full-btn" type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const u = document.getElementById("username").value;
+      const p = document.getElementById("password").value;
+
+      if (u === "admin" && p === "1234") {
+        localStorage.setItem("posLoggedIn", "true");
+        window.location.href = "index.html";
+      } else {
+        alert("Invalid login");
+      }
+    });
+  </script>
+</body>
+</html>
