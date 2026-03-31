@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Advanced POS System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-wrap">
+      <div>
+        <h1 id="title">Advanced POS System</h1>
+        <p id="subtitle">Mini Market & Shop Management</p>
+      </div>
+
+      <div class="top-actions">
+        <select id="currencySelect" class="select-box">
+          <option value="MMK">MMK</option>
+          <option value="BAHT">Baht</option>
+        </select>
+        <button id="langToggle" class="btn secondary">မြန်မာ</button>
+        <button id="logoutBtn" class="btn secondary">Logout</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container dashboard-grid">
+      <div class="dash-card green">
+        <h3 id="dashboardSales">MMK 0</h3>
+        <p id="salesLabel">Sales</p>
+      </div>
+      <div class="dash-card blue">
+        <h3 id="dashboardStock">0</h3>
+        <p id="stockLabel">Stock</p>
+      </div>
+      <div class="dash-card orange">
+        <h3 id="dashboardOrders">0</h3>
+        <p id="ordersLabel">Orders</p>
+      </div>
+    </div>
+  </section>
+
+  <main class="section">
+    <div class="container grid-2">
+      <section>
+        <div class="card">
+          <h2 id="adminTitle">Admin Product Management</h2>
+          <form id="productForm" class="form-grid">
+            <input type="hidden" id="productId" />
+            <input type="text" id="code" placeholder="Code" required />
+            <input type="text" id="nameEn" placeholder="Product Name (EN)" required />
+            <input type="text" id="nameMm" placeholder="Product Name (MM)" required />
+            <input type="text" id="categoryEn" placeholder="Category (EN)" required />
+            <input type="text" id="categoryMm" placeholder="Category (MM)" required />
+            <input type="number" id="price" placeholder="Price" required />
+            <input type="number" id="stock" placeholder="Stock" required />
+            <button type="submit" class="btn primary" id="saveProductBtn">Save Product</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h2 id="productsTitle">Products</h2>
+          <input type="text" id="searchInput" class="search-input" placeholder="Search product..." />
+          <div id="productGrid" class="product-grid"></div>
+        </div>
+      </section>
+
+      <aside>
+        <div class="card">
+          <h2 id="cartTitle">Cart</h2>
+          <div id="cartList" class="cart-list"></div>
+
+          <div class="cart-summary">
+            <div><span id="subtotalLabel">Subtotal</span><strong id="subtotal">MMK 0</strong></div>
+            <div><span id="taxLabel">Tax (5%)</span><strong id="tax">MMK 0</strong></div>
+            <div class="total-row"><span id="totalLabel">Total</span><strong id="total">MMK 0</strong></div>
+          </div>
+
+          <div class="checkout-actions">
+            <button class="btn secondary" id="clearCartBtn">Clear Cart</button>
+            <button class="btn primary" id="checkoutBtn">Checkout</button>
+          </div>
+        </div>
+
+        <div class="card">
+          <h2 id="reportTitle">Sales Report</h2>
+          <div class="report-box">
+            <p><span id="reportSalesLabel">Total Sales</span>: <strong id="reportSales">MMK 0</strong></p>
+            <p><span id="reportOrdersLabel">Total Orders</span>: <strong id="reportOrders">0</strong></p>
+            <p><span id="reportItemsLabel">Items Sold</span>: <strong id="reportItems">0</strong></p>
+          </div>
+        </div>
+
+        <div class="card receipt-card" id="receiptCard">
+          <h2 id="receiptTitle">Receipt</h2>
+          <div id="receiptItems"></div>
+          <div class="cart-summary">
+            <div><span id="receiptSubtotalLabel">Subtotal</span><strong id="receiptSubtotal">MMK 0</strong></div>
+            <div><span id="receiptTaxLabel">Tax</span><strong id="receiptTax">MMK 0</strong></div>
+            <div class="total-row"><span id="receiptTotalLabel">Total</span><strong id="receiptTotal">MMK 0</strong></div>
+          </div>
+          <button class="btn primary full-btn" id="printBtn">Print Receipt</button>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
